@@ -1,0 +1,24 @@
+<mkconfig
+HDR = `{ls *.h}
+SRC = `{ls *.c}
+OBJ = ${SRC:%.c=%.o}
+TGT = $NAME
+all :Q: $TGT 
+	echo -n
+strip :V: $TGT
+	$STRIP $TGT
+$TGT : $OBJ
+	$LD -o $TGT $LDFLAGS $OBJ $SLIB $LIB
+%.o :V: %.c
+	$CC -c -o $target $CPPFLAGS $CFLAGS $prereq
+%.c :Q: $HDR
+	touch $target
+%.h :Q:
+	touch $target
+clean :V:
+	rm -rf $TGT *.o
+install :V: $TGT
+	cp -f $TGT $BIN/
+	chmod 0755 $BIN/$TGT
+uninstall :V:
+	rm -f $BIN/$TGT

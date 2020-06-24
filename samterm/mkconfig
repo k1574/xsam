@@ -1,0 +1,21 @@
+<../mkconfig
+
+NAME = samterm
+
+DDINC = -I../inc
+INC = $INC $DDINC
+
+X11LIB = -lX11
+XFTLIB = -lXft
+XTLIB = -lXt
+XILIB = -lXi
+
+XLIB = $X11LIB $XFTLIB $XTLIB $XILIB
+LIB = $XLIB
+
+# Static libraries.
+SLIB = ../libframe/libframe.a ../libXg/libXg.a
+
+CPPFLAGS = $INC $STD
+CFLAGS = $CFLAGS
+LDFLAGS =

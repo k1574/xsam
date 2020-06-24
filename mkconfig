@@ -1,0 +1,23 @@
+CC = cc
+LD = $CC
+AR = ar
+STRIP = strip
+
+LOCAL=$HOME/local
+BIN=$LOCAL/bin
+SHR=$LOCAL/shr
+MAN=$SHR/man
+
+# Names of used standards.
+# Mac OS X users need to add -D_DARWIN_C_SOURCE here.
+STD = -std=c99 -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=500
+
+# FreeType.
+FTINC = -I/usr/include/freetype2
+INC = $FTINC
+
+# Default remote shell.
+RXPATH=/usr/bin/ssh
+
+# Directories to make by default.
+DIRS = libXg libframe sam samterm
