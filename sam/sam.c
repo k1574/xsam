@@ -40,8 +40,7 @@ bool bpipeok;
 int termlocked;
 char    *samterm = "samterm";
 char    *rsamname = "sam";
-char *sh = "sh";
-char *shpath = "/bin/sh";
+char *sh = "rc";
 char *rmsocketname = NULL;
 
 wchar_t    baddir[] = { '<', 'b', 'a', 'd', 'd', 'i', 'r', '>', '\n'};
@@ -218,8 +217,6 @@ sammain(int argc, char *argv[])
 
     tempfile.listptr = emalloc(0);
     home = getenv("HOME") ? getenv("HOME") : "/";
-    shpath = getenv("SHELL") ? getenv("SHELL") : shpath;
-    sh = basename(shpath);
     if(!dflag)
         startup(machine, rmsocketname != NULL, trylock);
     Fstart();

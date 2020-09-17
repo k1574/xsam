@@ -295,7 +295,6 @@ extern wchar_t *right[];
 extern char *rsamname;  /* globals */
 extern char *samterm;
 extern char *sh;
-extern char *shpath;
 extern wchar_t genbuf[];
 extern char *genc;
 extern FILE *io;

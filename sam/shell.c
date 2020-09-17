@@ -95,7 +95,7 @@ plan9(File *f, int type, String *s, int nest)
             close(0);   /* so it won't read from terminal */
             open("/dev/null", 0);
         }
-        execl(shpath, sh, "-c", Strtoc(&plan9cmd), NULL);
+        execl("/bin/env", "env", sh, "-c", Strtoc(&plan9cmd), NULL);
         exit(EXIT_FAILURE);
     }
     if(pid == -1)
