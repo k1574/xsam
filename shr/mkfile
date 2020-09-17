@@ -1,0 +1,12 @@
+<../mkconfig
+MKSHELL = rc
+all:VQ:
+	echo -n
+install:V:
+	for(d in man/*)
+		for(f in $d/*){
+			cp -f $f $MAN/^`{basename $d}^/^`{basename $f}
+			chmod 0644 $MAN^/^`{basename $d}^/^`{basename $f}
+		}
+clean:VQ:
+	echo -n
