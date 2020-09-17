@@ -20,5 +20,5 @@ INC = $FTINC
 RXPATH=/usr/bin/ssh
 
 # Directories to make by default.
-DIRS = libXg libframe sam samterm shr
+DIRS = libXg libframe sam samterm ssam shr
 
